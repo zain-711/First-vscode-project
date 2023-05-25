@@ -10,18 +10,20 @@ function App() {
         <br></br> 
         <div className="SearchBars">
           <input className= "search" placeholder = "Search..." defaultValue=""></input>
+
           <select id="search-field-choice">
           <option value="" disabled selected>Select search field</option>
             <option value="itemId">ID number</option>
             <option value="itemName">Name</option>
             <option value="itemPrice">Price</option>
             <option value="itemCategory">Category</option>
-        </select>
+          </select>
         </div>
         <br></br> 
         <div className="EditBar">
           <input className="name" placeholder = "enter item name here" defaultValue= ""></input>
           <input className="price" placeholder = "enter price here" defaultValue=""></input>
+
           <select id="Categories">
             <option value="" disabled selected>Please select category</option>
             <option value="food">Food and Drink</option>
@@ -37,6 +39,7 @@ function App() {
         </select>
           <button className="edit">✎</button>
           <button id="add" className="add">+</button>
+
           <button className="remove">X</button>
         </div>
         <br></br>
@@ -48,4 +51,3 @@ function App() {
 export default App;
 
 // test test test
-
