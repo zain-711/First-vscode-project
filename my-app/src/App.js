@@ -8,7 +8,7 @@ function App() {
           <input></input>
           {/* drop down menu */}
         </div>
-        <div className="filters">
+        <div className="editBoxes">
           <input></input>
           <input></input>
           {/* drop down menu */}
