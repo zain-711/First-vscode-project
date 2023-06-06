@@ -1,8 +1,14 @@
 import "./Button.css";
+import RecieptComponent from "./reciept";
 
-export default function Add() {
+export default function Add({receiptList, setRecieptList}) {
+
+const add = () =>{
+    setRecieptList([...receiptList, <RecieptComponent></RecieptComponent>])
+  }
+  
   return (
-    <button id="add" className="add">
+    <button onClick={add} id="add" className="add">
       +
     </button>
   );

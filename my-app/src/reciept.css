@@ -1,0 +1,15 @@
+.ListItem{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+}
+.entryBox{
+    width: 160px;
+}
+.idBox{
+    width:20px;
+}
+
+.priceBox{
+    width:60px;
+}
