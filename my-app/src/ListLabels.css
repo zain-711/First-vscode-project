@@ -1,0 +1,11 @@
+.header{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    font-family: "Trebuchet MS";
+    font-size: large;
+    font-weight: bold;
+    justify-items: center;
+}
+
+
+
