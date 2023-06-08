@@ -7,25 +7,33 @@ import ListLabels from "./ListLabels";
 
 function App() {
   //state array
-  const [receiptList, setReceiptList] = useState([<RecieptComponent key="1"></RecieptComponent>])
-  
+
+  const [counter, setCounter] = useState(1);
+  const [receiptList, setReceiptList] = useState([]);
+
   return (
     <div>
       <div className="NavigationBar">
         <br></br>
-        <br></br>
-        <br></br>
-        <SearchBar></SearchBar>
-        <Add receiptList = {receiptList} setReceiptList={setReceiptList}></Add>
-        <br></br>
-        <br></br>
+        <div className="searchBar">
+          <SearchBar></SearchBar>
+        </div>
+        <div className="addbtn">
+          <Add
+            receiptList={receiptList}
+            setReceiptList={setReceiptList}
+            counter={counter}
+            setCounter={setCounter}
+          ></Add>
+        </div>
         <br></br>
       </div>
-      <div className="array">
+      <div className="body">
         <br></br>
         <ListLabels></ListLabels>
         <br></br>
-        {receiptList}</div>
+        {receiptList}
+      </div>
     </div>
   );
 }
