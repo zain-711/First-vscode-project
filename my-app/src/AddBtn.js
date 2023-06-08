@@ -1,5 +1,5 @@
 import "./Button.css";
-import RecieptComponent from "./reciept";
+import RecieptComponent from "./receipt";
 import React, { useState } from "react";
 
 export default function Add({
@@ -12,7 +12,7 @@ export default function Add({
     setCounter(counter + 1);
     setReceiptList([
       ...receiptList,
-      <RecieptComponent key={counter} counter={counter}></RecieptComponent>,
+      <RecieptComponent key={counter} counter={counter} receiptList={receiptList} setReceiptList={setReceiptList}></RecieptComponent>,
     ]);
   };
 

@@ -1,8 +1,17 @@
+/* ************************************************
+This file controls CSS styles for the two search bars
+at the top of the page, but not the 'navigation bar' 
+that houses them
+************************************************ */
+
+/* Sets the searchbar layout */
 .Searchbars {
   display: flex;
   flex-direction: row;
 }
 
+/* CSS styling for the main search bar, which determines 
+its dimensions and adds a drop shadow effect */
 .search {
   margin-right: 10px;
   width: 550px;
@@ -14,6 +23,8 @@
   font-size: large;
 }
 
+/* CSS styling for the field choice bar, which determines 
+its dimensions and adds a drop shadow effect */
 #search-field-choice {
   height: 27px;
   width: auto;
