@@ -1,12 +1,21 @@
 import "./Button.css";
 import RecieptComponent from "./reciept";
+import React, { useState } from "react";
 
-export default function Add({receiptList, setRecieptList}) {
+export default function Add({
+  receiptList,
+  setReceiptList,
+  counter,
+  setCounter,
+}) {
+  const add = () => {
+    setCounter(counter + 1);
+    setReceiptList([
+      ...receiptList,
+      <RecieptComponent key={counter} counter={counter}></RecieptComponent>,
+    ]);
+  };
 
-const add = () =>{
-    setRecieptList([...receiptList, <RecieptComponent></RecieptComponent>])
-  }
-  
   return (
     <button onClick={add} id="add" className="add">
       +

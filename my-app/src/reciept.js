@@ -1,14 +1,21 @@
 import "./reciept.css";
 
-export default function RecieptComponent(){
-    
-
-
-    return(<div className="ListItem">
-        <div className="idBox">1</div>
-        <input className="entryBox" placeholder="Enter Item name"maxLength={"25"}></input>
-        <input className="priceBox" placeholder="Item price" maxLength={"8"}></input>
-        <select className="entryBox" id="category-choice">
+export default function RecieptComponent(counter) {
+  const id = counter.counter;
+  return (
+    <div className="ListItem">
+      <div className="idBox">{id}</div>
+      <input
+        className="entryBox"
+        placeholder="Enter Item name"
+        maxLength={"25"}
+      ></input>
+      <input
+        className="priceBox"
+        placeholder="Item price"
+        maxLength={"8"}
+      ></input>
+      <select className="entryBox" id="category-choice">
         <option disabled selected>
           Select category
         </option>
@@ -34,7 +41,7 @@ export default function RecieptComponent(){
         <option value="miscellaneous">Miscellaneous</option>
       </select>
 
-            {/* <table>
+      {/* <table>
                 <tr>
                     <th>Item ID</th>
                     <th>item Name</th>
@@ -52,8 +59,6 @@ export default function RecieptComponent(){
                     <td>Mexico</td>
                 </tr>
             </table> */}
-        </div>
-    )
-      
+    </div>
+  );
 }
-

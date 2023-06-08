@@ -1,15 +1,16 @@
-.ListItem{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-items: center;
+.ListItem {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  margin-bottom: 20px;
 }
-.entryBox{
-    width: 160px;
+.entryBox {
+  width: 160px;
 }
-.idBox{
-    width:20px;
+.idBox {
+  width: 20px;
 }
 
-.priceBox{
-    width:60px;
+.priceBox {
+  width: 60px;
 }
