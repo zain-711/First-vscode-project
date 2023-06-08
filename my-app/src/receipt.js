@@ -1,8 +1,8 @@
 import "./receipt.css";
 import Removebtn from "./RemoveBtn";
 
-export default function RecieptComponent(counter, receiptList, setReceiptList, setCounter) {
-  const id = counter.counter
+export default function RecieptComponent({counter, receiptList, setReceiptList, setCounter}) {
+  const id = counter.counter;
   return (
     <div className="ListItem">
       <div className="idBox">{id}</div>
@@ -41,7 +41,7 @@ export default function RecieptComponent(counter, receiptList, setReceiptList, s
         <option value="services">Services</option>
         <option value="miscellaneous">Miscellaneous</option>
       </select>
-      <Removebtn className="removebtn" counter={counter} setCounter={setCounter} receiptList={receiptList} setReceiptList={setReceiptList}></Removebtn>
+      <Removebtn className="removebtn" ></Removebtn>
     </div>
   );
 }

@@ -1,10 +1,24 @@
+/* ************************************************
+This file controls CSS styles for the headings at 
+the top of the list of receipts
+************************************************ */
+
+
+/* CSS styling for the headings.
+Note that there are five columns and an empty
+column at the end for the add button */
 .header{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     font-family: "Trebuchet MS";
     font-size: large;
     font-weight: bold;
     justify-items: center;
+}
+
+/* CSS styling for the seperate "edit entry" column */
+.editHint {
+    color: grey;
 }
 
 
