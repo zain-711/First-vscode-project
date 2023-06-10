@@ -5,6 +5,7 @@
 // Basic import setup
 import React, { useState } from "react";
 import "./App.css";
+import { useEffect } from "react";
 
 // imports page components from other files
 import SearchBar from "./SearchBar";
@@ -21,7 +22,7 @@ function App() {
     { id: 1, Name: "apple", Price: 1.99, Category: "Food & Drink" },
     { id: 2, Name: "laptop", Price: 299, Category: "Appliances & Tech" },
     { id: 3, Name: "banana", Price: 2.05, Category: "Food & Drink" },
-    { id: 4, Name: "basketball", Price: 2.05, Category: "Sports & Fitness" },
+    { id: 4, Name: "basketball", Price: 15, Category: "Sports & Fitness" },
   ]);
   const [counter, setCounter] = useState([5]);
 
@@ -54,13 +55,47 @@ function App() {
     ]);
   }
 
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredReceiptList, setFilteredReceiptList] = useState([]);
+
+  const [selectedCategory, setSelectedCategory] = useState("Name");
+
+  function optionHandler(option) {
+    setSelectedCategory(option);
+  }
+
+  function searchHandler(input) {
+    setSearchQuery(input);
+  }
+
+  useEffect(() => {
+    let filteredList = receiptList;
+
+    if (searchQuery) {
+      filteredList = receiptList.filter((item) => {
+        if (selectedCategory === "Price" || selectedCategory === "id") {
+          return item[selectedCategory] === parseFloat(searchQuery);
+        } else {
+          return item[selectedCategory]
+            .toLowerCase()
+            .includes(searchQuery.toLowerCase());
+        }
+      });
+    }
+
+    setFilteredReceiptList(filteredList);
+  }, [receiptList, searchQuery, selectedCategory]);
+
   //returns the page and all the elements on it
   return (
     <div>
       <div className="NavigationBar">
         <br></br>
         <div className="searchBar">
-          <SearchBar></SearchBar>
+          <SearchBar
+            optionHandler={optionHandler}
+            searchHandler={searchHandler}
+          ></SearchBar>
         </div>
 
         <br></br>
@@ -72,7 +107,7 @@ function App() {
         <br></br>
         <ListLabels></ListLabels>
         <br></br>
-        {receiptList.map((item) => {
+        {filteredReceiptList.map((item) => {
           return (
             <div>
               <RecieptRender

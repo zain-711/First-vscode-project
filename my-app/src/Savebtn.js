@@ -1,3 +1,5 @@
+import "./Button.css";
+
 export default function Savebtn({ item, saveHandler, handleClick }) {
   function save() {
     saveHandler(item);
@@ -5,7 +7,7 @@ export default function Savebtn({ item, saveHandler, handleClick }) {
   }
   return (
     <button onClick={save} className="save">
-      save
+      🖫
     </button>
   );
 }

@@ -66,11 +66,33 @@ This file controls CSS styles for the buttons
 }
 
 .edit:hover {
-  background-color: #615abd;
+  background-color: rgb(90, 144, 189);
 }
 
 .edit:active {
-  background-color: #615abd;
+  background-color: rgb(90, 144, 189);
+  filter: drop-shadow(1px 1px 1px rgb(51, 51, 51));
+  transform: translateY(1px);
+}
+
+.save {
+  width: 25px;
+  height: 25px;
+  font-weight: bold;
+  color: white;
+  background-color: #4e8f69;
+  margin-right: 5px;
+  filter: drop-shadow(2px 2px 1px rgb(51, 51, 51));
+  border: 0;
+  border-radius: 5px;
+}
+
+.save:hover {
+  background-color: #71b360;
+}
+
+.save:active {
+  background-color: #71b360;
   filter: drop-shadow(1px 1px 1px rgb(51, 51, 51));
   transform: translateY(1px);
 }

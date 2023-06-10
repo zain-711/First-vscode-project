@@ -25,10 +25,10 @@ export default function RecieptRender({ saveHandler, removeHandler, item }) {
         ></EditComp>
       ) : (
         <div className="object">
-          <div>{item.id}</div>
-          <div>{item.Name}</div>
-          <div>{item.Price}</div>
-          <div>{item.Category}</div>
+          <div className="txt">{item.id}</div>
+          <div className="txt">{item.Name}</div>
+          <div className="txt">£{item.Price}</div>
+          <div className="txt">{item.Category}</div>
           <div>
             <EditBtn handleClick={handleEdit}></EditBtn>
             <Removebtn removeHandler={removeHandler} id={item.id}></Removebtn>
