@@ -5,14 +5,14 @@ at the top of the page
 
 // imports the relevant CSS file
 import "./SearchBar.css";
+import { useState } from "react";
 
 // exports a div containing both the search bars
 export default function SearchBar() {
   return (
     <div className="SearchBars">
-
       {/* this contains the main search bar */}
-      <input className="search" placeholder="Search..." defaultValue=""></input>
+      <input className="search" placeholder="Search..."></input>
 
       {/* this contains the search field choice bar,
       and determines its options */}

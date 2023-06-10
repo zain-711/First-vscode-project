@@ -1,10 +1,12 @@
 import "./Button.css";
 
-export default function Removebtn({ counter, receiptList, setReceiptList, setCounter}){
-    const array = receiptList
-
-
-    return (
-            <button  className="remove">x</button>
-           )
+export default function Removebtn({ id, removeHandler }) {
+  function handleRemoveClick(e) {
+    removeHandler(id);
+  }
+  return (
+    <button className="remove" onClick={handleRemoveClick}>
+      X
+    </button>
+  );
 }

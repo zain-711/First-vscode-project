@@ -1,4 +1,3 @@
-
 /* ************************************************
 This file controls CSS styles for the buttons
 ************************************************ */
@@ -52,4 +51,26 @@ This file controls CSS styles for the buttons
   background-color: #f57758;
   filter: drop-shadow(1px 1px 1px rgb(51, 51, 51));
   transform: translateY(1px);
-} 
+}
+
+.edit {
+  width: 25px;
+  height: 25px;
+  font-weight: bold;
+  color: white;
+  background-color: #5a66bd;
+  margin-right: 5px;
+  filter: drop-shadow(2px 2px 1px rgb(51, 51, 51));
+  border: 0;
+  border-radius: 5px;
+}
+
+.edit:hover {
+  background-color: #615abd;
+}
+
+.edit:active {
+  background-color: #615abd;
+  filter: drop-shadow(1px 1px 1px rgb(51, 51, 51));
+  transform: translateY(1px);
+}

@@ -9,19 +9,50 @@ import "./App.css";
 // imports page components from other files
 import SearchBar from "./SearchBar";
 import Add from "./AddBtn";
-import RecieptComponent from "./receipt";
 import ListLabels from "./ListLabels";
-
+import RecieptRender from "./ReceiptRender";
 
 // root function for the app
 function App() {
-  //state array
-
   //sets state for the ID counter
-  const [counter, setCounter] = useState(1);
 
   //sets state for the list of receipts
-  const [receiptList, setReceiptList] = useState([]);
+  const [receiptList, setReceiptList] = useState([
+    { id: 1, Name: "apple", Price: 1.99, Category: "Food & Drink" },
+    { id: 2, Name: "laptop", Price: 299, Category: "Appliances & Tech" },
+    { id: 3, Name: "banana", Price: 2.05, Category: "Food & Drink" },
+    { id: 4, Name: "basketball", Price: 2.05, Category: "Sports & Fitness" },
+  ]);
+  const [counter, setCounter] = useState([5]);
+
+  function removeHandler(id) {
+    setReceiptList(
+      receiptList.filter((item) => {
+        return item.id !== id;
+      })
+    );
+  }
+
+  function saveHandler(updatedItem) {
+    setReceiptList(
+      receiptList.map((item) => {
+        return updatedItem.id === item.id ? updatedItem : item;
+      })
+    );
+  }
+
+  function addHandler() {
+    setCounter(receiptList.length + 1);
+    setReceiptList([
+      ...receiptList,
+      {
+        id: receiptList[receiptList.length - 1].id + 1,
+        Name: "Click the edit button to fill this reciept",
+        Price: undefined,
+        Category: "",
+      },
+    ]);
+  }
 
   //returns the page and all the elements on it
   return (
@@ -35,18 +66,24 @@ function App() {
         <br></br>
       </div>
       <div className="body">
+        <div className="addbtn">
+          <Add addHandler={addHandler}></Add>
+        </div>
         <br></br>
         <ListLabels></ListLabels>
         <br></br>
-        {receiptList}
-        <div className="addbtn">
-          <Add
-            receiptList={receiptList}
-            setReceiptList={setReceiptList}
-            counter={counter}
-            setCounter={setCounter}
-          ></Add>
-        </div>
+        {receiptList.map((item) => {
+          return (
+            <div>
+              <RecieptRender
+                key={item.id}
+                saveHandler={saveHandler}
+                removeHandler={removeHandler}
+                item={item}
+              ></RecieptRender>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

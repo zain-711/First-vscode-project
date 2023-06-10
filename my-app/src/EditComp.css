@@ -1,10 +1,4 @@
-/* ************************************************
-This file controls CSS styles for the input boxes 
-used in each receipt entry
-************************************************ */
-
-/* CSS styling for the layout of the boxes */
-.ListItem {
+.Object {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   justify-items: center;
