@@ -49,7 +49,7 @@ function App() {
       {
         id: receiptList[receiptList.length - 1].id + 1,
         Name: "Click the edit button to fill this reciept",
-        Price: undefined,
+        Price: 0,
         Category: "",
       },
     ]);
